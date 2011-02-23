@@ -1,12 +1,9 @@
 package hudson.plugins.jeny;
 
-import org.kohsuke.stapler.StaplerRequest;
-
 import hudson.Extension;
 import hudson.model.AbstractProject;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Publisher;
-import net.sf.json.JSONObject;
 
 @Extension
 public class JenyDescriptor extends BuildStepDescriptor<Publisher> {
