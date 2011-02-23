@@ -3,4 +3,22 @@ JENY: Enables No Yellow!
 Simple Hudson/Jenkins plugin that enables builds to be either red or green.
 In other words no UNSTABLE builds. If this plugin is activated for a build, then builds that do not have status SUCCESS will result in failure.
 
+How to install:
+* Browse to the dist folder(https://github.com/kenglxn/JENY/tree/master/dist)
+* right click the RAW link and choose 'save as'
+* In hudson ui:
+** Go to Hudson > Manage Hudson > Manage Plugins > Advanced 
+** Under Upload Plugin click 'Choose File'
+** Select Upload 
+* Go to the Project/build you want to disable UNSUCCESFUL
+* click 'Activate JENY'
+
+NOTE: these instructions may differ some respective to the version of hudson/jenkins you are runnning.
+The description was written based on an installation on Hudson ver. 1.395
+
+Other ways to install:
+* Download the source code from github.
+* build with mvn clean package
+* upload jeny.hpi to hudson/jenkins
+
 
