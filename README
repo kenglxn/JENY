@@ -1,0 +1,6 @@
+JENY: Enables No Yellow!
+
+Simple Hudson/Jenkins plugin that enables builds to be either red or green.
+In other words no UNSTABLE builds. If this plugin is activated for a build, then builds that do not have status SUCCESS will result in failure.
+
+
