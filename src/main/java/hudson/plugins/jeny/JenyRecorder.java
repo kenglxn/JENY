@@ -1,7 +1,6 @@
 package hudson.plugins.jeny;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
 import org.kohsuke.stapler.DataBoundConstructor;
 
@@ -13,8 +12,6 @@ import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Recorder;
 
 public class JenyRecorder extends Recorder {
-    private static final Logger LOGGER = Logger.getLogger(JenyRecorder.class.getName());
-
 
     @DataBoundConstructor
     public JenyRecorder() {}
@@ -25,11 +22,10 @@ public class JenyRecorder extends Recorder {
 
     @Override
     public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
-        return Result.SUCCESS.equals(build.getResult());
-    }
-
-    @Override
-    public boolean needsToRunAfterFinalized() {
-        return super.needsToRunAfterFinalized();
+        boolean success = Result.SUCCESS.equals(build.getResult());
+        if(!success) {
+            build.setResult(Result.FAILURE);
+        }
+        return success;
     }
 }

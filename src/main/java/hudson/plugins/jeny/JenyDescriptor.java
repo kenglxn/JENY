@@ -11,11 +11,6 @@ import net.sf.json.JSONObject;
 @Extension
 public class JenyDescriptor extends BuildStepDescriptor<Publisher> {
 
-    private boolean isEnabled;
-
-    /**
-     * Constructs a {@link JenyDescriptor}.
-     */
     public JenyDescriptor() {
         super(JenyRecorder.class);
     }
@@ -33,20 +28,5 @@ public class JenyDescriptor extends BuildStepDescriptor<Publisher> {
     @Override
     public final boolean isApplicable(final Class<? extends AbstractProject> clazz) {
         return true;
-    }
-
-    @Override
-    public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
-        // To persist global configuration information,
-        // set that to properties and call save().
-        isEnabled = formData.getBoolean("isEnabled");
-        // ^Can also use req.bindJSON(this, formData);
-        //  (easier when there are many fields; need set* methods for this, like setUseFrench)
-        save();
-        return super.configure(req, formData);
-    }
-
-    public boolean isEnabled() {
-        return isEnabled;
     }
 }
