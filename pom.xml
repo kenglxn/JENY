@@ -7,6 +7,7 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
+  <url>https://github.com/kenglxn/JENY</url>
   <groupId>net.glxn</groupId>
   <artifactId>jeny</artifactId>
   <version>1.0</version>
