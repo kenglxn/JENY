@@ -22,10 +22,9 @@ public class JenyRecorder extends Recorder {
 
     @Override
     public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
-        boolean success = Result.SUCCESS.equals(build.getResult());
-        if(!success) {
+        if(!Result.SUCCESS.equals(build.getResult())) {
             build.setResult(Result.FAILURE);
         }
-        return success;
+        return true;
     }
 }
